@@ -1,0 +1,103 @@
+/*.element {
+  transition: [property] [duration] [ease] [delay]
+}
+
+element: declare transition on the element.  what will be transitioned
+property: other property that is going to animate
+duration: how long will this transition happening
+ease: how is that transition distributed across time
+delay: how long should this wait until the animation starts happening*/
+
+/*.element {
+  transition: opacity 300ms ease-in-out 1s;
+}*/
+
+/*animatable properties:
+
+font-size
+background-color
+width
+left
+
+cannot animate
+
+display
+font-family
+position*/
+
+/*-best performance properties
+position being translate x and y
+scale
+rotation
+opacity*/
+
+/*TRIGGERING
+  hover pseudo class
+  class change*/
+
+body {
+  padding: 50px;
+}
+
+.trigger {
+  width: 200px;
+  height: 200px;
+  border: 20px solid #999;
+  background: #ddd;
+}
+
+.box {
+  display: inline-block;
+  background: salmon;
+  height: 200px;
+  width: 200px;
+  transition: transform 300ms ease-in-out;
+  /*transition is looking for a transform to change*/
+  /*transform: translate(200px, 150px) rotate(20deg);*/
+  /*pointer-events: none;*/
+  /*dont trigger events*/
+}
+
+/*.box:hover {
+  transform: translate(200px, 150px) rotate(20deg);
+  put the destination in the hover.
+}*/
+
+.trigger:hover .box {
+  transform: translate(200px, 150px) rotate(20deg);
+}
+
+/*.trigger.clicked .box {
+  transform: translate(200px, 150px) rotate(20deg);
+}*/
+
+
+
+
+
+
+
+.btn-container {
+  border: 1px blue solid;
+  padding: 50px;
+  margin-top: 50px;
+  background: -webkit-linear-gradient(315deg, #55efcb 0%, #1e5799 0%, #55efcb 0%, #5bcaff 100%);
+}
+
+.btn {
+  height: 50px;
+  width: 150px;
+  background-color: transparent;
+  border: 2px #fff solid;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  transition: all .5s ease-in-out;
+}
+
+.btn:hover {
+  background-color: white;
+  border-radius: 10px;
+  color: #55efcb;
+  transform: rotate(360deg);
+}

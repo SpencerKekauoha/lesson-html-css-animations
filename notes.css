@@ -1,0 +1,63 @@
+/*.element {
+  transition: [property] [duration] [ease] [delay]
+}
+
+element: declare transition on the element.  what will be transitioned
+property: other property that is going to animate
+duration: how long will this transition happening
+ease: how is that transition distributed across time
+delay: how long should this wait until the animation starts happening*/
+
+/*.element {
+  transition: opacity 300ms ease-in-out 1s;
+}*/
+
+/*animatable properties:
+
+font-size
+background-color
+width
+left
+
+cannot animate
+
+display
+font-family
+position*/
+
+/*-best performance properties
+position being translate x and y
+scale
+rotation
+opacity*/
+
+/*TRIGGERING
+  hover pseudo class
+  class change*/
+
+body {
+  padding: 50px;
+}
+
+.trigger {
+  width: 200px;
+  height: 200px;
+  border: 20px solid #999;
+  background: #ddd;
+}
+
+.box {
+  display: inline-block;
+  background: pink;
+  height: 200px;
+  width: 200px;
+  transition: transform 300ms ease-in-out;
+  /*transition is looking for a transform to change*/
+  pointer-events: none;
+  /*dont trigger events*/
+}
+
+.trigger:hover .box {
+  transform: translate(200px, 150px) rotate(20deg);
+  /*put the destination in the hover.  */
+}
